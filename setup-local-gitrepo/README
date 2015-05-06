@@ -1,0 +1,6 @@
+MEMO
+====
+
+ mkdir /home/debian/repo-list
+ cp ../repo-lists/src-jessie_meta-debian_tiny-minimal.txt /home/debian/repo-list/repo-meta-debian_tiny-minimal.txt
+ ./pull-repos.sh -c ../config.sh -l /home/debian/repo-list/repo-meta-debian_tiny-minimal.txt 
