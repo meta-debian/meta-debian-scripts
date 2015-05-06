@@ -3,12 +3,11 @@ Copyright (C) 2015 TOSHIBA CORPORATION
 meta-debian-scripts
 ===================
 
-This is a set of helper scripts. Some of them will be merge with
-meta-debian.
+This is a set of helper scripts. Some of them might be merge with
+meta-debian in the future.
 
 setup-local-gitrepo
 -------------------
 
 Setup-local-repo uses to setup your own local git repository server
 which basaed on list to reduce Github's workload.
-
