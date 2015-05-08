@@ -32,7 +32,6 @@ debian-libmpc
 debian-libpng
 debian-libtool
 debian-libxml2
-debian-linux
 debian-lzo2
 debian-m4
 debian-mklibs
@@ -61,3 +60,4 @@ debian-util-linux
 debian-xutils-dev
 debian-xz-utils
 debian-zlib
+linux-ltsi
