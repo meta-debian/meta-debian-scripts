@@ -10,4 +10,4 @@ setup-local-gitrepo
 -------------------
 
 Setup-local-repo uses to setup your own local git repository server
-which basaed on list to reduce Github's workload.
+which based on list to reduce Github's workload.
