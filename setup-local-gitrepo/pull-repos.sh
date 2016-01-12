@@ -66,7 +66,7 @@ while read line;do
 	continue
     fi
     REPO_DIR=$REPO.git
-	GIT_DIR=`echo $REPO_DIR | sed -e "s/ystk\///g" | sed -e "s/meta-debian\///g"`
+    GIT_DIR=`echo $REPO_DIR | sed -e "s/ystk\///g" | sed -e "s/meta-debian\///g"`
     echo "GIT_DIR: $GIT_DIR"
     if [ ! -d $GIT_DIR ]
     then
