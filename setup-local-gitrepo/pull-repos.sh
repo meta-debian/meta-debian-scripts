@@ -66,8 +66,9 @@ while read line;do
 	continue
     fi
     REPO_DIR=$REPO.git
-    echo "REPO_DIR: $REPO_DIR"
-    if [ ! -d $REPO_DIR ]
+	GIT_DIR=`echo $REPO_DIR | sed -e "s/ystk\///g" | sed -e "s/meta-debian\///g"`
+    echo "GIT_DIR: $GIT_DIR"
+    if [ ! -d $GIT_DIR ]
     then
         echo "INFO    : MIRROR $GIT_SERVER/$REPO_DIR"
         if [ $FLAG_DRY_RUN -ne 0 ]; then
@@ -77,7 +78,7 @@ while read line;do
 	    git clone --mirror $GIT_SERVER/$REPO_DIR
         fi
     else
-        cd $REPO_DIR
+        cd $GIT_DIR
         echo "INFO    : FETCH $GIT_SERVER/$REPO_DIR"
         if [ $FLAG_DRY_RUN -ne 0 ]; then
 	    echo "DRYRUN  : git fetch --all"
