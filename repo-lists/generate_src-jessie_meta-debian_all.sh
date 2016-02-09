@@ -27,3 +27,6 @@ do
 done
 sed -e 's/^/ystk\//g' -i $OUTPUTFILE
 echo "meta-debian/linux-ltsi" >> $OUTPUTFILE
+echo "meta-debian/qemu" >> $OUTPUTFILE
+echo "meta-debian/gnu-config" >> $OUTPUTFILE
+echo "meta-debian/pseudo" >> $OUTPUTFILE
