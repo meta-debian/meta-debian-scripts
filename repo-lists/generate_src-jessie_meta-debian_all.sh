@@ -24,9 +24,9 @@ for ((i=1; i<$LASTPAGE; i++));
 do
 	curl "https://api.github.com/users/"$USER"/repos?page="$i"&per_page=100" 2> /dev/null \
 		| jq '[.[] .name]' | grep "\"debian-" | cut -d"\"" -f2 >> $OUTPUTFILE;
+	curl "https://api.github.com/users/"$USER"/repos?page="$i"&per_page=100" 2> /dev/null \
+		| jq '[.[] .name]' | grep "\"tools-yocto" | cut -d"\"" -f2 >> $OUTPUTFILE;
+	curl "https://api.github.com/users/"$USER"/repos?page="$i"&per_page=100" 2> /dev/null \
+		| jq '[.[] .name]' | grep "\"linux-ltsi" | cut -d"\"" -f2 >> $OUTPUTFILE;
 done
 sed -e 's/^/ystk\//g' -i $OUTPUTFILE
-echo "meta-debian/linux-ltsi" >> $OUTPUTFILE
-echo "meta-debian/qemu" >> $OUTPUTFILE
-echo "meta-debian/gnu-config" >> $OUTPUTFILE
-echo "meta-debian/pseudo" >> $OUTPUTFILE
