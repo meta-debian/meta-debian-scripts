@@ -25,7 +25,9 @@ do
 	curl "https://api.github.com/users/"$USER"/repos?page="$i"&per_page=100" 2> /dev/null \
 		| jq '[.[] .name]' | grep "\"debian-" | cut -d"\"" -f2 >> $OUTPUTFILE;
 	curl "https://api.github.com/users/"$USER"/repos?page="$i"&per_page=100" 2> /dev/null \
-		| jq '[.[] .name]' | grep "\"tools-yocto" | cut -d"\"" -f2 >> $OUTPUTFILE;
+		| jq '[.[] .name]' | grep "\"gnu-config" | cut -d"\"" -f2 >> $OUTPUTFILE;
+	curl "https://api.github.com/users/"$USER"/repos?page="$i"&per_page=100" 2> /dev/null \
+		| jq '[.[] .name]' | grep "\"pseudo" | cut -d"\"" -f2 >> $OUTPUTFILE;
 	curl "https://api.github.com/users/"$USER"/repos?page="$i"&per_page=100" 2> /dev/null \
 		| jq '[.[] .name]' | grep "\"linux-ltsi" | cut -d"\"" -f2 >> $OUTPUTFILE;
 done
