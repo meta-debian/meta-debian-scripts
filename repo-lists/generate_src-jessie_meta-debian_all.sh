@@ -29,6 +29,8 @@ do
 	curl "https://api.github.com/users/"$USER"/repos?page="$i"&per_page=100" 2> /dev/null \
 		| jq '[.[] .name]' | grep "\"pseudo" | cut -d"\"" -f2 >> $OUTPUTFILE;
 	curl "https://api.github.com/users/"$USER"/repos?page="$i"&per_page=100" 2> /dev/null \
+		| jq '[.[] .name]' | grep "\"qemu" | cut -d"\"" -f2 >> $OUTPUTFILE;
+	curl "https://api.github.com/users/"$USER"/repos?page="$i"&per_page=100" 2> /dev/null \
 		| jq '[.[] .name]' | grep "\"linux-ltsi" | cut -d"\"" -f2 >> $OUTPUTFILE;
 done
 sed -e 's/^/ystk\//g' -i $OUTPUTFILE
