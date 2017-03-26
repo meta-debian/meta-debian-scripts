@@ -1,7 +1,7 @@
 #!/bin/bash
 
 USER=ystk
-OUTPUTFILE="src-jessie_deby_all.txt"
+OUTPUTFILE="src-deby_all.txt"
 
 function abort
 {
@@ -25,13 +25,5 @@ do
 	curl "https://api.github.com/users/"$USER"/repos?page="$i"&per_page=100" 2> /dev/null \
 		| jq '[.[] .name]' | grep -e "\"debian-" -e "\"gnu-config" -e "\"pseudo" \
 		-e "\"qemu" -e "\"linux-ltsi" -e "\"linux-cip" | cut -d"\"" -f2 >> $OUTPUTFILE;
-#	curl "https://api.github.com/users/"$USER"/repos?page="$i"&per_page=100" 2> /dev/null \
-#		| jq '[.[] .name]' | grep "\"gnu-config" | cut -d"\"" -f2 >> $OUTPUTFILE;
-#	curl "https://api.github.com/users/"$USER"/repos?page="$i"&per_page=100" 2> /dev/null \
-#		| jq '[.[] .name]' | grep "\"pseudo" | cut -d"\"" -f2 >> $OUTPUTFILE;
-#	curl "https://api.github.com/users/"$USER"/repos?page="$i"&per_page=100" 2> /dev/null \
-#		| jq '[.[] .name]' | grep "\"qemu" | cut -d"\"" -f2 >> $OUTPUTFILE;
-#	curl "https://api.github.com/users/"$USER"/repos?page="$i"&per_page=100" 2> /dev/null \
-#		| jq '[.[] .name]' | grep "\"linux-ltsi" | cut -d"\"" -f2 >> $OUTPUTFILE;
 done
 sed -e 's/^/ystk\//g' -i $OUTPUTFILE

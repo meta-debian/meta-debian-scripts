@@ -4,7 +4,7 @@ meta-debian-scripts
 ===================
 
 This is a set of helper scripts. Some of them might be merge with
-meta-debian in the future.
+deby in the future.
 
 setup-local-gitrepo
 -------------------
