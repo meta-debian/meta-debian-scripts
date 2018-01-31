@@ -60,8 +60,8 @@ grep -v "^#" $GITLIST | sort | uniq > $GITLIST_SORT
 while read line; do
 	path=$(echo "$line" | cut -d " " -f 1)
 	commit=$(echo "$line" | cut -d " " -f 2)
-	uri=git://$SERVER/$path
-#	uri=gitosis@$SERVER:$path
+#	uri=git://$SERVER/$path
+	uri=gitosis@$SERVER:$path
 
 	if [ "$OPT" = "-d" ]; then
 		echo "deleting $TAG in $uri" | tee -a $LOG
